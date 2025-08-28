@@ -17,9 +17,10 @@ class TagonnApplication : Application() {
         
         // Initialize WebView for better performance
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.P) {
-            val processName = android.app.ActivityManager.getMyMemoryState(android.app.ActivityManager.RunningAppProcessInfo())
-            if (packageName == processName.processName) {
-                WebView.setDataDirectorySuffix(processName.processName)
+            val processInfo = android.app.ActivityManager.RunningAppProcessInfo()
+            android.app.ActivityManager.getMyMemoryState(processInfo)
+            if (packageName == processInfo.processName) {
+                WebView.setDataDirectorySuffix(processInfo.processName)
             }
         }
     }

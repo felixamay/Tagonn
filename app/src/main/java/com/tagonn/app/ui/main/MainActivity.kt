@@ -87,8 +87,6 @@ class MainActivity : AppCompatActivity() {
                 
                 // Cache settings
                 cacheMode = WebSettings.LOAD_DEFAULT
-                setAppCacheEnabled(true)
-                setAppCachePath(cacheDir.absolutePath)
             }
         }
     }
