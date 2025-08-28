@@ -139,6 +139,17 @@ Change the app name in `app/src/main/res/values/strings.xml`:
 <string name="app_name">Your App Name</string>
 ```
 
+### Logo Options
+
+The app includes multiple stylish logo designs:
+
+1. **Main Logo** (`ic_launcher_foreground.xml`): Premium modern design with rounded rectangle background
+2. **Alternative Logo** (`ic_launcher_foreground_alt.xml`): Geometric design with square background
+3. **Minimalist Logo** (`ic_launcher_foreground_minimal.xml`): Clean circular design
+4. **Premium Logo** (`ic_launcher_foreground_premium.xml`): Sophisticated design with corner details
+
+To change the logo, replace the content of `ic_launcher_foreground.xml` with any of the alternative designs.
+
 ## Play Store Preparation
 
 The app is configured for Play Store release with:
