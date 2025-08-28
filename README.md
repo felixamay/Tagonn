@@ -87,6 +87,10 @@ app/
    - Connect an Android device or start an emulator
    - Click the Run button (Shift+F10) or use `./gradlew installDebug`
 
+**Alternative Build Methods:**
+- **Windows**: Run `build.bat` for automated build process
+- **Linux/Mac**: Run `./build.sh` for automated build process
+
 ## Configuration
 
 ### App Configuration
@@ -153,11 +157,16 @@ The app is configured for Play Store release with:
    - Ensure you have the correct Android SDK version installed
    - Clean and rebuild the project: Build → Clean Project
 
-2. **WebView Issues**
+2. **Memory Issues (Gradle 8.7)**
+   - If you encounter "JVM garbage collector is thrashing" errors, the `gradle.properties` file is already configured with proper memory settings
+   - The project uses 4GB heap space and 1GB metaspace
+   - If issues persist, increase `org.gradle.jvmargs` in `gradle.properties`
+
+3. **WebView Issues**
    - Check that JavaScript is enabled in WebView settings
    - Verify network permissions are granted
 
-3. **Permission Issues**
+4. **Permission Issues**
    - Ensure runtime permissions are properly requested
    - Check that permission rationale dialogs are shown
 
