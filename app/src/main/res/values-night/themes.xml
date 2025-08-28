@@ -1,0 +1,59 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme for dark mode -->
+    <style name="Theme.Tagonn" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        
+        <!-- Secondary brand color -->
+        <item name="colorSecondary">@color/accent</item>
+        <item name="colorSecondaryVariant">@color/accent</item>
+        <item name="colorOnSecondary">@color/white</item>
+        
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">@color/primary</item>
+        <item name="android:windowLightStatusBar">false</item>
+        
+        <!-- Navigation bar color -->
+        <item name="android:navigationBarColor">@color/primary</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        
+        <!-- Background colors for dark mode -->
+        <item name="android:colorBackground">@color/background_dark</item>
+        <item name="colorSurface">@color/surface_dark</item>
+        <item name="colorOnSurface">@color/on_surface_dark</item>
+        <item name="colorOnBackground">@color/on_background_dark</item>
+        
+        <!-- Divider color -->
+        <item name="colorOutline">@color/divider_dark</item>
+        
+        <!-- Text colors -->
+        <item name="android:textColorPrimary">@color/on_surface_dark</item>
+        <item name="android:textColorSecondary">@color/on_surface_dark</item>
+        
+        <!-- WebView background -->
+        <item name="android:windowBackground">@color/webview_background_dark</item>
+    </style>
+    
+    <!-- Splash screen theme for dark mode -->
+    <style name="Theme.Tagonn.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/splash_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="windowSplashScreenAnimationDuration">1000</item>
+        <item name="postSplashScreenTheme">@style/Theme.Tagonn</item>
+    </style>
+    
+    <!-- Toolbar theme for dark mode -->
+    <style name="Theme.Tagonn.Toolbar" parent="ThemeOverlay.Material3.Dark.ActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
+    
+    <!-- Dialog theme for dark mode -->
+    <style name="Theme.Tagonn.Dialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorSurface">@color/surface_dark</item>
+        <item name="colorOnSurface">@color/on_surface_dark</item>
+    </style>
+</resources>
