@@ -51,9 +51,54 @@ class TagonnWebViewClient(private val activity: MainActivity) : WebViewClient() 
             }
             // Open external links in browser
             else -> {
-                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
-                activity.startActivity(intent)
+                try {
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                    activity.startActivity(intent)
+                    true
+                } catch (e: Exception) {
+                    false
+                }
+            }
+        }
+    }
+    
+    override fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean {
+        val uri = url?.let { Uri.parse(it) }
+        return when {
+            // Keep tagonn.com links inside the app
+            url?.contains("tagonn.com") == true -> {
+                view?.loadUrl(url)
                 true
+            }
+            // Handle external links (mailto, tel, etc.)
+            url?.startsWith("mailto:") == true || url?.startsWith("tel:") == true || url?.startsWith("sms:") == true -> {
+                try {
+                    val intent = Intent(Intent.ACTION_VIEW, uri)
+                    activity.startActivity(intent)
+                    true
+                } catch (e: Exception) {
+                    false
+                }
+            }
+            // Handle other external links
+            url?.startsWith("http://") != true && url?.startsWith("https://") != true -> {
+                try {
+                    val intent = Intent(Intent.ACTION_VIEW, uri)
+                    activity.startActivity(intent)
+                    true
+                } catch (e: Exception) {
+                    false
+                }
+            }
+            // Open external links in browser
+            else -> {
+                try {
+                    val intent = Intent(Intent.ACTION_VIEW, uri)
+                    activity.startActivity(intent)
+                    true
+                } catch (e: Exception) {
+                    false
+                }
             }
         }
     }

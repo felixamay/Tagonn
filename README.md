@@ -16,14 +16,15 @@ A modern Android WebView application that wraps tagonn.com into a native mobile 
 
 ## Technical Stack
 
-- **Language**: Kotlin
+- **Language**: Kotlin 1.9.20
 - **Minimum SDK**: 24 (Android 7.0)
 - **Target SDK**: 34 (Android 14)
 - **Architecture**: MVVM with ViewBinding
 - **UI Framework**: Material Design 3
 - **WebView**: Android WebView with custom clients
 - **Permissions**: Runtime permission handling
-- **Build System**: Gradle with Kotlin DSL
+- **Build System**: Gradle 8.7 with Kotlin DSL
+- **Android Gradle Plugin**: 8.5.0
 
 ## Project Structure
 
@@ -56,9 +57,10 @@ app/
 
 ### Prerequisites
 
-- Android Studio Arctic Fox or later
+- Android Studio Hedgehog (2023.1.1) or later
 - Android SDK 34
-- JDK 8 or later
+- JDK 17 or later
+- Gradle 8.7 (automatically managed by wrapper)
 
 ### Build Steps
 

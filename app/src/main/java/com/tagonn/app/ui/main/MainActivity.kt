@@ -71,7 +71,6 @@ class MainActivity : AppCompatActivity() {
                 javaScriptEnabled = true
                 domStorageEnabled = true
                 databaseEnabled = true
-                setAppCacheEnabled(true)
                 allowFileAccess = true
                 allowContentAccess = true
                 loadWithOverviewMode = true
@@ -81,6 +80,15 @@ class MainActivity : AppCompatActivity() {
                 displayZoomControls = false
                 mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
                 userAgentString = userAgentString + " TagonnApp/1.0"
+                
+                // Enable modern web features
+                mediaPlaybackRequiresUserGesture = false
+                setGeolocationEnabled(true)
+                
+                // Cache settings
+                cacheMode = WebSettings.LOAD_DEFAULT
+                setAppCacheEnabled(true)
+                setAppCachePath(cacheDir.absolutePath)
             }
         }
     }
